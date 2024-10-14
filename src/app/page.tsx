@@ -1,7 +1,10 @@
 import About from "@/components/About/About";
 import Hero from "@/components/Home/Hero";
+import Tagline from "@/components/Home/Tagline";
 import Plan from "@/components/Plan";
+import Services from "@/components/Services/Services";
 import Testimonials from "@/components/Services/Testimonials";
+import WhatWeDo from "@/components/Services/WhatWeDo";
 import Team from "@/components/Team/Team";
 import { Member, MemberWithPosition } from "@/types/member";
 
@@ -30,8 +33,11 @@ export default async function Home() {
       <Hero />
       <About />
       <Plan />
+      <WhatWeDo />
+      <Services />
       <Team bgColor="offWhite" members={membersWithPosition} />
       <Testimonials />
+      <Tagline />
     </div>
   );
 }

@@ -28,6 +28,8 @@ type CarouselContextProps = {
   scrollNext: () => void;
   canScrollPrev: boolean;
   canScrollNext: boolean;
+  selectedIndex: number;
+  scrollTo: (index: number) => void;
 } & CarouselProps;
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null);
@@ -67,6 +69,7 @@ const Carousel = React.forwardRef<
     );
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
+    const [selectedIndex, setSelectedIndex] = React.useState(0);
 
     const onSelect = React.useCallback((api: CarouselApi) => {
       if (!api) {
@@ -75,6 +78,7 @@ const Carousel = React.forwardRef<
 
       setCanScrollPrev(api.canScrollPrev());
       setCanScrollNext(api.canScrollNext());
+      setSelectedIndex(api.selectedScrollSnap());
     }, []);
 
     const scrollPrev = React.useCallback(() => {
@@ -84,6 +88,13 @@ const Carousel = React.forwardRef<
     const scrollNext = React.useCallback(() => {
       api?.scrollNext();
     }, [api]);
+
+    const scrollTo = React.useCallback(
+      (index: number) => {
+        api?.scrollTo(index);
+      },
+      [api]
+    );
 
     const handleKeyDown = React.useCallback(
       (event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -132,6 +143,8 @@ const Carousel = React.forwardRef<
           scrollNext,
           canScrollPrev,
           canScrollNext,
+          selectedIndex,
+          scrollTo,
         }}
       >
         <div
@@ -252,12 +265,37 @@ const CarouselNext = React.forwardRef<
 });
 CarouselNext.displayName = "CarouselNext";
 
-// const carouselDot = React.forwardRef<
-//   HTMLButtonElement,
-//   React.ComponentProps<typeof Button>
-// >(({ className, ...props }, ref) => {
-//   const 
-// });
+const CarouselDots = () => {
+  const { api, selectedIndex, scrollTo } = useCarousel();
+  const [dots, setDots] = React.useState<number[]>([]);
+
+  React.useEffect(() => {
+    if (api) {
+      setDots(
+        Array(api.scrollSnapList().length)
+          .fill(0)
+          .map((_, i) => i)
+      );
+    }
+  }, [api]);
+
+  return (
+    <div className="flex justify-center space-x-2 mt-10">
+      {dots.map((dot, index) => (
+        <button
+          key={index}
+          className={`size-5 rounded-full ${
+            selectedIndex === index
+              ? "bg-peachRed"
+              : "bg-transparent border border-peachRed"
+          }`}
+          onClick={() => scrollTo(index)}
+          aria-label={`Go to slide ${index + 1}`}
+        />
+      ))}
+    </div>
+  );
+};
 export {
   type CarouselApi,
   Carousel,
@@ -265,4 +303,5 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
+  CarouselDots,
 };

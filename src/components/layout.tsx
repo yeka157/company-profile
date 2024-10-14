@@ -21,10 +21,12 @@ const AppLayout = ({ children }: AppLayoutProps) => {
   return (
     <div className="min-h-screen">
       <nav className="h-[100px] container mx-auto flex items-center justify-between py-[30px]">
-        <div className="flex gap-x-3 items-center">
-          <Image src="/logo.svg" alt="" width={40} height={40} />
-          <h1 className="font-bold text-2xl">Company</h1>
-        </div>
+        <Link href={"/"}>
+          <div className="flex gap-x-3 items-center">
+            <Image src="/logo.svg" alt="" width={40} height={40} />
+            <h1 className="font-bold text-2xl">Company</h1>
+          </div>
+        </Link>
         <div className="flex gap-x-12 items-center">
           <div className="flex justify-between text-darkBlue items-center gap-x-8">
             <Link href={"/about"}>

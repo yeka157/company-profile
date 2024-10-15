@@ -19,7 +19,7 @@ const Team: React.FC<TeamProps> = ({ members, bgColor }) => {
             Our Leaders
           </h3>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
           {members?.map((member, index) => (
             <div key={index} className="flex flex-col items-center gap-y-4">
               <Image

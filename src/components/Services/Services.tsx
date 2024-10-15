@@ -50,7 +50,7 @@ const Services = () => {
           Our Expertise
         </h2>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-5">
         {services.map((service, index) => (
           <div key={index} className="bg-offWhite p-8 rounded-[10px]">
             <div className="flex flex-col gap-y-5">

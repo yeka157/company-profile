@@ -5,7 +5,7 @@ import React from "react";
 const About = () => {
   return (
     <div className="bg-offWhite">
-      <div className="container mx-auto flex gap-x-8 items-center py-24">
+      <div className="container mx-auto flex gap-x-8 items-center py-24 lg:px-5">
         <Image
           src={"/about.png"}
           alt=""

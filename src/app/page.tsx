@@ -29,7 +29,7 @@ export default async function Home() {
     }
   );
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-[100px]">
       <Hero />
       <About />
       <Plan />

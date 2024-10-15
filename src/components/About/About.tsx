@@ -5,16 +5,16 @@ import React from "react";
 const About = () => {
   return (
     <div className="bg-offWhite">
-      <div className="container mx-auto flex gap-x-8 items-center py-24 lg:px-5">
+      <div className="container mx-auto flex gap-8 items-center py-24 lg:px-5 flex-col lg:flex-row px-5">
         <Image
           src={"/about.png"}
           alt=""
           width={0}
           height={0}
           sizes="100vw"
-          className="w-1/2 h-auto"
+          className="lg:w-1/2 w-full h-auto"
         />
-        <div className="w-1/2">
+        <div className="w-full lg:w-1/2">
           <h4 className="text-peachRed font-bold text-2xl leading-5 mb-2.5">
             \ About us \
           </h4>
@@ -27,21 +27,21 @@ const About = () => {
             of using Lorem Ipsum is that it has a more-or-less normal
             distribution of letters
           </p>
-          <div className="bg-white rounded-[10px] p-4 flex gap-x-4 items-center">
-            <div className="size-[70px] bg-offWhite rounded-[10px] flex items-center justify-center">
+          <div className="bg-white rounded-[10px] p-5 md:p-8 flex gap-x-4 items-center">
+            <div className="w-[70px] h-[70px] bg-offWhite rounded-[10px] flex items-center justify-center">
               <Image
                 src={"/customer-support.svg"}
-                alt=""
+                alt="Customer Support"
                 width={40}
                 height={40}
               />
             </div>
             <div className="space-y-2.5">
-              <h6 className="text-xl text-darkBlue leading-5 font-bold">
+              <h6 className="text-lg sm:text-xl md:text-2xl text-darkBlue leading-5 font-bold">
                 Get Instant Professional Advice
               </h6>
-              <p className="leading-4 font-medium">
-                Ready to Help :{" "}
+              <p className="text-sm sm:text-base md:text-lg leading-4 font-medium">
+                Ready to Help:{" "}
                 <Link
                   href={"tel:+13566787896"}
                   className="text-peachRed font-bold ms-2.5"

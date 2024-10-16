@@ -14,3 +14,11 @@ export interface Member {
 export interface MemberWithPosition extends Member {
   position: string;
 }
+
+export interface DevMember extends Member {
+  email: string;
+}
+
+export interface DevMemberWithPosition extends DevMember {
+  position: string;
+}

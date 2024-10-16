@@ -1,4 +1,5 @@
 import About from "@/components/About/About";
+import History from "@/components/About/History";
 import Banner from "@/components/Banner";
 import Tagline from "@/components/Home/Tagline";
 import Team from "@/components/Team/Team";
@@ -22,14 +23,15 @@ const Page = async () => {
       return {
         ...member,
         position:
-          index > 3 ? position[index - position.length] : position[index],
+          index > 3 ? position[index % position.length] : position[index],
       };
     }
   );
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-[100px]">
       <Banner page="About" />
       <About />
+      <History />
       <Team bgColor="white" members={membersWithPosition} />
       <Tagline />
     </div>

@@ -64,7 +64,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
   return (
     <div className="min-h-screen">
       <nav
-        className={`fixed bg-white top-0 left-0 w-full h-[100px] transition-transform duration-300 ${
+        className={`fixed bg-white z-50 top-0 left-0 w-full h-[100px] transition-transform duration-300 ${
           isScrollingDown && !isOpen ? "-translate-y-full" : "translate-y-0"
         }`}
       >
@@ -99,17 +99,17 @@ const AppLayout = ({ children }: AppLayoutProps) => {
                   Our Services
                 </span>
               </Link>
-              <Link href="/portfolio">
+              <Link href="/team">
                 <span className="font-semibold text-base lg:text-lg leading-5 hover:underline">
-                  Portfolio
+                  Our Teams
                 </span>
               </Link>
-              <Link href="/blog">
+              <Link href="/">
                 <span className="font-semibold text-base lg:text-lg leading-5 hover:underline">
                   Blog
                 </span>
               </Link>
-              <Link href="/contact">
+              <Link href="/">
                 <span className="font-semibold text-base lg:text-lg leading-5 hover:underline">
                   Contact
                 </span>
@@ -141,15 +141,15 @@ const AppLayout = ({ children }: AppLayoutProps) => {
                   Our Services
                 </span>
               </Link>
-              <Link href="/portfolio">
+              <Link href="/team">
                 <span
                   className="font-semibold leading-5 hover:underline"
                   onClick={toggleMenu}
                 >
-                  Portfolio
+                  Our teams
                 </span>
               </Link>
-              <Link href="/blog">
+              <Link href="/">
                 <span
                   className="font-semibold leading-5 hover:underline"
                   onClick={toggleMenu}
@@ -157,7 +157,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
                   Blog
                 </span>
               </Link>
-              <Link href="/contact">
+              <Link href="/">
                 <span
                   className="font-semibold leading-5 hover:underline"
                   onClick={toggleMenu}

@@ -35,7 +35,7 @@ const Testimonials = async () => {
       <Marquee pauseOnHover className="[--duration:40s]">
         {membersWithPosition.map((val, index) => (
           <div
-            className="p-8 rounded-[10px] bg-offWhite max-w-[250px] md:max-w-[500px] lg:max-w-[750px]"
+            className="p-8 rounded-[10px] bg-offWhite max-w-[300px] md:max-w-[500px] lg:max-w-[750px]"
             key={index}
           >
             <div className="flex justify-between">

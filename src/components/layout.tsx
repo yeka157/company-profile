@@ -81,7 +81,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
             </div>
           </Link>
 
-          <div className="md:hidden pe-5 md:pe-0">
+          <div className="md:hidden pr-5 block">
             <button onClick={toggleMenu} aria-label="Toggle menu">
               {isOpen ? <IoClose size={30} /> : <IoMenu size={30} />}
             </button>

@@ -54,7 +54,7 @@ const Plan = () => {
               },
             }}
           >
-            <CarouselContent className="space-x-8">
+            <CarouselContent className="space-x-8 max-w-[100vw]">
               {plans.map((plan, index) => {
                 const formattedIndex =
                   index + 1 < 10 ? `0${index + 1}` : `${index + 1}`;
